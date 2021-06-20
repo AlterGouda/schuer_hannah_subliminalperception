@@ -68,7 +68,7 @@ def display_image_for_time(img, time, allow_key_press=True):
           continue
     return False, timer.getTime(), None
 
-#Combination of experimental conditions
+#Function checks if correct key is pressed
 def run_trial(img_1, img_2, correct_key):
     key_pressed, passed_time, key = display_procedure(img_1, img_2)
     reaction_times.append(passed_time)
@@ -80,9 +80,10 @@ def run_trial(img_1, img_2, correct_key):
 input_correct = []
 reaction_times = []
 
+#Possibile combinations of stimuli 2x kongruent and 2x inkongruent
 for number in order_of_images:
     if number == 0:
-        run_trial(img_1 = images[0], img_2 = images[1], correct_key = key_list[0])
+        run_trial(img_1 = images[0], img_2 = images[1], correct_key = key_list[0]) 
     if number == 1:
         run_trial(img_1 = images[2], img_2 = images[1], correct_key = key_list[0])
     if number == 2:
