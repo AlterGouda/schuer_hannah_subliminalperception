@@ -32,6 +32,7 @@ my_win.flip()
 waitKeys( keyList = ['space'] )
 timer = Clock()
 
+#funtion experiment procedure and user input 
 def display_procedure(img_1, img_2):
     fixation.draw() 
     my_win.flip() 
@@ -40,7 +41,7 @@ def display_procedure(img_1, img_2):
         continue
     display_image_for_time(img_1, 2.00, allow_key_press=False) #Prime 
     display_image_for_time(images[4], 2.00, allow_key_press=False) #Interstimulus Intercept 
-    key_pressed, passed_time_1, key = display_image_for_time(img_2, 3.00, allow_key_press=True) #Target Stimulus    was ist key_pressed, passed_time1, key??
+    key_pressed, passed_time_1, key = display_image_for_time(img_2, 3.00, allow_key_press=True) #Target Stimulus 
     if not key_pressed:
         key_pressed, passed_time_2, key = display_image_for_time(images[4], 2.00, allow_key_press=True) #time to react
         passed_time_1 = passed_time_1 + passed_time_2
@@ -54,7 +55,7 @@ def display_procedure(img_1, img_2):
     return key_pressed, passed_time_1, key   #if key None = no answer
 
 
-# Anzeige der Stimuli, welche keys, Reaktionszeitmessung 
+#Function of stimuli presentation and checks which key pressed/ reaction time
 def display_image_for_time(img, time, allow_key_press=True):
     stimulus = visual.ImageStim(my_win, image = img, pos = [0,0]) 
     stimulus.draw()
