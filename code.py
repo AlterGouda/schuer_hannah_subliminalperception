@@ -95,3 +95,10 @@ for number in order_of_images:
 print(reaction_times)
 print(input_correct)
 print(order_of_images)
+
+
+# GL
+# good task, so far good code
+# output missing
+# data to be saved per trial
+# small: reassignment of objects unnecessary
