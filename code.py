@@ -45,6 +45,7 @@ instruction_page = TextStim(my_win, text = "Hello and welcome to the experiment!
 \nPress 'space' when you are ready to start.", wrapWidth = 1.8, height = 0.09, color = 'black', pos = [0, 0.4])
 intro_image = visual.ImageStim(my_win, images[4], pos = [0,-0.55])
 after_testrun = TextStim(my_win, text = "Well done.\nNow get ready for the experiment\nTo continue press 'space'.", wrapWidth = 1.8, height = 0.09, color = 'black', pos = [0, 0])
+end_screen = TextStim(my_win, text = "Thank you for participating in the experiment.\nHave a great day. \nPlease press 'space' to end the experiment. ", wrapWidth = 1.8, height = 0.09, color = 'black', pos = [0, 0])
 #Draw Instruction Page
 intro_image.draw() 
 instruction_page.draw()
@@ -189,6 +190,10 @@ df = pandas.DataFrame(data={"Key Input_Correct": input_correct, "Reaction Time":
 df.to_csv(f"{expinfo['expName']}_{expinfo['participant']}_{expinfo['date']}.csv", sep=',',index=False)
 mylist = [input_correct, reaction_times]
 
+#End Screen. 
+end_screen.draw()
+my_win.flip()
+waitKeys( keyList = ['space'] )
 
 # GL
 # good task, so far good code
