@@ -91,12 +91,6 @@ def display_test_procedure(img_1, img_2, correct_key):
             timer.reset(0)
             while timer.getTime() < 2:
                 continue #Feedback if input is correct
-        elif key[0] not in key_list:
-            key_feedback.draw()
-            my_win.flip()
-            timer.reset(0)
-            while timer.getTime() < 2:
-                continue
         else:
             wrong_feedback.draw()
             my_win.flip()
@@ -113,12 +107,6 @@ def display_test_procedure(img_1, img_2, correct_key):
                 timer.reset(0)
                 while timer.getTime() < 2:
                     continue #Feedback if input is correct
-            elif key[0] not in key_list:
-                key_feedback.draw()
-                my_win.flip()
-                timer.reset(0)
-                while timer.getTime() < 2:
-                    continue 
             else:
                 wrong_feedback.draw()
                 my_win.flip()
